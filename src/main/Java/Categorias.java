@@ -1,9 +1,10 @@
+package src.main.Java;
 import java.util.*;
 
 public class Categorias
 {
 	private List <String> tipos;
-	
+
 	public Categorias()
 	{
 		tipos=new ArrayList<>();
@@ -13,7 +14,7 @@ public class Categorias
 		tipos.add("Lazer");
 		tipos.add("Salário");
 	}
-	
+
 	public boolean adicionarCategoria(String novoTipo)
 	{
 		if(tipos.contains(novoTipo))
@@ -27,16 +28,16 @@ public class Categorias
 	{
 		return tipos;
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		String mensagem="";
-		
+
 		for(String item:tipos)
 			mensagem+=item+";";
-			
-		
+
+
 		return mensagem;
 	}
 }

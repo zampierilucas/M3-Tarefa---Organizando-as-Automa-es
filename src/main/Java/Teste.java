@@ -1,34 +1,35 @@
+package src.main.Java;
 import java.util.*;
 
 public class Teste
 {
 	public static void main(String [] args)
 	{
-		static int ANOATUAL=2023;//adquirir isto através do SO
+		int ANOATUAL=2023;//adquirir isto através do SO
 		Categorias categorias = new Categorias();
-		
+
 		Date dataInicio, dataFim, dataRegistro;
 		int dia, mes, ano;
 		FolhaDeConta folhaTeste;
 		Registro umRegistro;
 		Scanner entrada = new Scanner(System.in);
 		int controleRegistrar=-1;
-		
+
 		System.out.println("Criando uma nova folha de registros:");
 		System.out.println("Data de inicio dos registros");
 		dia=adquireDia();
 		mes=adquireMes();
 		ano=adquireAno();
-		dataInicio=new Date(dia, mes, ano);
-		
+		dataInicio=new Date(ano, mes, dia);
+
 		System.out.println("Data de fim dos registros");
 		dia=adquireDia();
 		mes=adquireMes();
 		ano=adquireAno();
 		dataFim=new Date(dia, mes, ano);
-		
+
 		folhaTeste=new FolhaDeConta(Date dataInicio, Date dataFim);
-		
+
 		while(controleRegistrar<0||controleRegistrar>2)
 		{
 			System.out.println("Menu:");
@@ -38,7 +39,7 @@ public class Teste
 			{
 				case 1:
 				{
-					System.out.println("Data do registro:"):
+					System.out.println("Data do registro:");
 					dia=adquireDia();
 					mes=adquireMes();
 					ano=adquireAno();
@@ -47,7 +48,7 @@ public class Teste
 					System.out.println("Nome do registro: ");
 					String nomeRegistro=entrada.next();
 					System.out.println("Valor do registro: ");
-					double valorRegistro=entrada.nextDouble();		
+					double valorRegistro=entrada.nextDouble();
 					boolean isReceita=receitaOuDespesa();
 					//int i=1;
 					//esse bloco do nome pode ser melhorado!
@@ -58,9 +59,9 @@ public class Teste
 					String tipoRegistro=entrada.next();
 					if(!categorias.containsIgnoreCase(tipoRegistro))
 						categorias.adicionarCategoria(tipoRegistro);
-		
+
 					umRegistro=new Registro(dataRegistro,tipoRegistro,isReceita,nomeRegistro,valorRegistro);
-					
+
 					if(insereRegistro(umRegistro))
 						System.out.println("Registro salvo!");
 					else
@@ -76,7 +77,7 @@ public class Teste
 						System.out.println("Nenhuma entrada inserida");
 					else
 						System.out.println(folhaTeste.getEntrada());
-					
+
 					System.out.println("SAÍDAS");
 					if(folhaTeste.getSaida()==NULL)
 						System.out.println("Nenhuma saída inserida");
@@ -84,14 +85,14 @@ public class Teste
 						System.out.println(folhaTeste.getSaida());
 					controleRegistrar=-1;
 				}
-				
+
 				default:
 					System.out.println("Valor inválido");
 			}
 		}
 		entrada.close();
 	}
-	
+
 	public static int adquireDia()
 	{
 		Scanner entrada = new Scanner(System.in);
@@ -127,7 +128,7 @@ public class Teste
 		}
 		entrada.close();
 		return novoAno;
-		
+
 	}
 	public static boolean receitaOuDespesa()
 	{

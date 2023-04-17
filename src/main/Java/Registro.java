@@ -1,3 +1,4 @@
+package src.main.Java;
 //import algo para data
 //https://www.devmedia.com.br/manipulando-datas-em-java/21765 verificar com carinho
 import java.util.Date;
@@ -8,7 +9,7 @@ public class Registro
 	private boolean entrada;
 	private String nome;
 	private double valor;
-	
+
 	public Registro(Date data, String tipo, boolean entrada, String nome, double valor)
 	{
 		this.data=data;
@@ -17,7 +18,7 @@ public class Registro
 		this.nome=nome;
 		this.valor=valor;
 	}
-	
+
 	public Date getData()
 	{
 		return this.data;
@@ -38,11 +39,11 @@ public class Registro
 	{
 		return this.valor;
 	}
-	
+
 	//sem sets? errou, apaga e faz de novo?
-	
+
 	@Override
-	//não tenho certeza sobre a necessidade do toString. 
+	//não tenho certeza sobre a necessidade do toString.
 	//está escrito, de qualquer formaa
 	public String toString()
 	{
@@ -52,8 +53,8 @@ public class Registro
 		mensagem+=getData()+";";
 		mensagem+=getTipo()+";";
 		mensagem+=getEntrada()+";";
-		
-		
+
+
 		return mensagem;
 	}
 }

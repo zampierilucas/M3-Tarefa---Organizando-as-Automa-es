@@ -1,3 +1,4 @@
+package src.main.Java;
 import java.util.*;
 //dentro do util, já tem date
 public class FolhaDeConta
@@ -5,7 +6,7 @@ public class FolhaDeConta
 	private Date dataInicio, dataFim;
 	private List<Registro> entrada;
 	private List<Registro> saida;
-	
+
 	public FolhaDeConta(Date dataInicio, Date dataFim)
 	{
 		this.dataInicio=dataInicio;
@@ -13,7 +14,7 @@ public class FolhaDeConta
 		entrada=new ArrayList<>();
 		saida=new ArrayList<>();
 	}
-	
+
 	public Date getDataInicio()
 	{
 		return this.dataInicio;
@@ -31,7 +32,7 @@ public class FolhaDeConta
 		return this.saida;
 	}
 	//vão ser necessários sets?
-	
+
 	public boolean insereRegistro(Registro novoRegistro)
 	{
 		if(novoRegistro.getEntrada() && this.testData(novoRegistro.getData()))
@@ -48,7 +49,7 @@ public class FolhaDeConta
 		//melhorar o retorno do problema de não inserção?
 		//faço ordenação?
 	}
-	
+
 	private boolean testData(Date umaData)
 	{
 		if(umaData.compareTo(this.getDataFim())>0 || umaData.compareTo(this.getDataInicio())<0)//melhorar os sinais
